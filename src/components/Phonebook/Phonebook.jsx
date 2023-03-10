@@ -20,12 +20,12 @@ const Phonebook = () => {
     }
 
     newContact.id = nanoid();
-    setContacts([...contacts, newContact]);
+    setContacts(prevState => [...prevState, newContact]);
     resetForm();
   }
 
   function removeContact(key) {
-    setContacts(contacts.filter(contact => contact.id !== key));
+    setContacts(prevState => prevState.filter(contact => contact.id !== key));
   }
 
   function onFilter(e) {
