@@ -6,7 +6,7 @@ import { Wrapper } from './Phonebook.styled';
 
 const Phonebook = () => {
   const [contacts, setContacts] = useState(
-    JSON.parse(localStorage.getItem('contacts'))
+    JSON.parse(localStorage.getItem('contacts') || [])
   );
   const [filter, setFilter] = useState('');
 
