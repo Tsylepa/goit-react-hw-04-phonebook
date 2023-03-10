@@ -42,14 +42,17 @@ const Phonebook = () => {
     <Wrapper>
       <h1>Phonebook</h1>
       <ContactForm handleSubmit={addContact} />
-
       <h2>My contacts</h2>
-      <ContactList
-        contacts={contacts}
-        removeContact={removeContact}
-        onFilter={onFilter}
-        filter={filter}
-      />
+      {contacts.length === 0 ? (
+        <p>Your contact list is empty...</p>
+      ) : (
+        <ContactList
+          contacts={contacts}
+          removeContact={removeContact}
+          onFilter={onFilter}
+          filter={filter}
+        />
+      )}
     </Wrapper>
   );
 };

@@ -10,7 +10,6 @@ import {
 } from './ContactList.styled';
 
 const ContactList = ({ contacts, removeContact, filter, onFilter }) => {
-  if (contacts.length === 0) return <p>Your contact list is empty...</p>;
   const filteredContacts =
     filter.length > 0
       ? [...contacts].filter(contact =>
